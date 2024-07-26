@@ -1,0 +1,588 @@
+/* General Styles */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d2236;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the footer is pushed to the bottom */
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    height: auto; /* Remove fixed height */
+}
+
+header h1 {
+    margin: 0;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #fc33d1;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card h2 {
+    margin-top: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #212121;
+}
+
+.card h2 a {
+    text-decoration: none;
+}
+
+.card p {
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+    border: none;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #240d1e;
+    position: sticky; /* Sticky position for all screen sizes */
+    top: 0; /* Stick to the top of the viewport */
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+    height: 70px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Optional padding for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Optional max width for larger screens */
+    margin: 0 auto; /* Center the content */
+}
+
+.navbar-logo .logo {
+    margin-top: 20px;
+    height: 200px; /* Adjusted for responsiveness */
+    max-height: 300px; /* Ensure the logo does not exceed this height */
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.3s ease;
+}
+
+.navbar-menu.active {
+    max-height: 300px; /* Adjust if needed */
+}
+
+.navbar-menu .navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-link:hover {
+    color: #fc33d1;
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.add-product {
+    background-color: #7e01f3;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.add-product:hover {
+    background-color: #fc33d1;
+}
+
+.navbar-button {
+    background-color: #7e01f3;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.navbar-button:hover {
+    background-color: #fc33d1;
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        position: absolute;
+        top: 70px; /* Adjusted to align with navbar */
+        right: 0;
+        background-color: #240d1e;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 1000;
+        transition: max-height 0.3s ease;
+    }
+
+    .navbar-item {
+        padding: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-logo .logo {
+        margin-top: 20px;
+        height: 200px; /* Adjusted for smaller screens */
+    }
+}
+
+/* Main content margin adjustment */
+.main-content {
+    margin-top: 70px; /* Match the height of the navbar */
+}
+
+
+/* Card styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.page-content h1 {
+    color: #27e2e3;
+}
+
+.page-content a {
+    color: #7e01f3;
+}
+
+.page-content a:hover {
+    color: #fc33d1;
+}
+
+/* Ensure the footer stays at the bottom of the page */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the footer is pushed to the bottom */
+}
+
+.main-content {
+    flex: 1; /* Make sure main content takes up available space */
+}
+
+/* Footer styling */
+/* Ensure the footer stays at the bottom of the page */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the footer is pushed to the bottom */
+}
+
+.main-content {
+    flex: 1; /* Make sure main content takes up available space */
+}
+
+/* Footer styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0; /* Reduced padding */
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #fc33d1;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-social-link {
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer-social-link:hover {
+    color: #27e2e3;
+}
+
+.footer-credit {
+    font-size: 14px;
+}
+
+.footer-credit p {
+    margin: 0;
+}
+/* Contact Page Styling */
+.contact-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px; /* Adjust font size if needed */
+}
+
+.contact-icon {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 24px; /* Adjust icon size */
+    color: #333; /* Icon color */
+}
+
+.contact-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Link color */
+}
+
+.contact-list a:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+/* General Styles */
+.admin-container {
+    padding: 20px;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-form .form-group {
+    margin-bottom: 15px;
+}
+
+.product-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product-form input,
+.product-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-form button:hover {
+    background-color: #0056b3;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.error-page {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error-page h1 {
+    font-size: 100px;
+    margin: 0;
+    color: #dc3545;
+}
+
+.error-page p {
+    font-size: 18px;
+}
+
+.error-page a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.error-page a:hover {
+    text-decoration: underline;
+}
+.flash-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    z-index: 1000;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash-message button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    line-height: 1;
+    color: inherit;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.1s linear;
+}
