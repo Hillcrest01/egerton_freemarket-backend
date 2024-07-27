@@ -586,3 +586,12 @@ button[type="submit"]:hover {
     left: 0;
     transition: width 0.1s linear;
 }
+.no-underline-link {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.no-underline-link h2 {
+    margin: 0;
+    padding: 0;
+}
