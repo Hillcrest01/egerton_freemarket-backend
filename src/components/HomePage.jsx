@@ -20,9 +20,9 @@ const HomePage = () => {
                     <div key={product.id} className="card">
                         <div className="card-content">
                         <Link to={`/products/${product.id}`}><img src={`https://egerton-freemarket-90oc.onrender.com/uploads/${product.image_filename}`} alt={product.name} /></Link>
-                        <Link to={`/products/${product.id}`}><h2>{product.name}</h2></Link>
+                        <Link to={`/products/${product.id}`} className="no-underline-link"><h2>{product.name}</h2></Link>
                         <p>{product.description}</p>
-                        <p>Price: ${product.price}</p>
+                        <p>Price: Ksh.{product.price}</p>
                         </div>
                         <div className="card-actions">
                         <a href={`tel:${product.contact_number}`}>
