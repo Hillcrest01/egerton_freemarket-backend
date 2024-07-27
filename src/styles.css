@@ -595,3 +595,51 @@ button[type="submit"]:hover {
     margin: 0;
     padding: 0;
 }
+.loading-indicator {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5em;
+    color: #333;
+}
+/* Loading and Error Styles */
+.loading, .error {
+    position: fixed; /* Fix position to the center of the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the element */
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.loading {
+    color: #333;
+}
+
+.error {
+    color: red;
+}
+.welcome-message {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.welcome-message p {
+    font-size: 1.2em;
+    color: #212121;
+    margin-top: 10px;
+}
+
+
