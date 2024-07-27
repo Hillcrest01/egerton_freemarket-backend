@@ -135,7 +135,7 @@ const AdminPage = () => {
                         <img src={`https://egerton-freemarket-90oc.onrender.com/uploads/${p.image_filename}`} alt={p.name} />
                         <h2>{p.name}</h2>
                         <p>{p.description}</p>
-                        <p>Price: ${p.price}</p>
+                        <p>Price: Ksh.{p.price}</p>
                         <div className="card-actions">
                             <button onClick={() => handleEditProduct(p.id)}>Edit</button>
                             <button onClick={() => handleDeleteProduct(p.id)}>Delete</button>
